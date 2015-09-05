@@ -1387,7 +1387,7 @@ ul.minicart-dropdown-menu { color: #ffffff; }
 
 
 
-.custom-cart-div { border: 1px solid #E6E4DF; color: #696763; padding: 30px 15px; margin-left: 15px; margin-right: 15px; }
+.custom-cart-div { border: 0; color: #696763; padding: 0; margin-left: 15px; margin-right: 15px; }
 
 .custom-footer-cart-div { border: 1px solid #E6E4DF; color: #696763; padding: 30px 15px; }
 
