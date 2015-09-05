@@ -2580,6 +2580,7 @@
     <Content Include="Themes\NopShop\Views\Topic\TopicBlock.cshtml" />
     <Content Include="Themes\NopShop\Views\Topic\TopicDetails.cshtml" />
     <Content Include="Themes\NopShop\Views\Web.config" />
+    <Content Include="Themes\NopShop\Views\Shared\_ColumnsOneHomepage.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
