@@ -1361,6 +1361,8 @@
     <Content Include="Plugins\Widgets.NivoSlider\Views\WidgetsNivoSlider\Configure.cshtml" />
     <Content Include="Plugins\Widgets.NivoSlider\Views\WidgetsNivoSlider\PublicInfo.cshtml" />
     <Content Include="Plugins\Widgets.NivoSlider\web.config" />
+    <None Include="Properties\PublishProfiles\sloppr-dev - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\sloppr-dev - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\fineuploader\iframe.xss.response-4.2.2.js" />
     <Content Include="Scripts\fineuploader\jquery.fineuploader-4.2.2.js" />
