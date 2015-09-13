@@ -1156,10 +1156,6 @@
     <Content Include="Plugins\Shipping.USPS\logo.jpg" />
     <Content Include="Plugins\Shipping.USPS\Nop.Plugin.Shipping.USPS.dll" />
     <Content Include="Plugins\Shipping.USPS\Nop.Plugin.Shipping.USPS.pdb" />
-    <Content Include="Plugins\SMS.Verizon\Description.txt" />
-    <Content Include="Plugins\SMS.Verizon\logo.jpg" />
-    <Content Include="Plugins\SMS.Verizon\Nop.Plugin.SMS.Verizon.dll" />
-    <Content Include="Plugins\SMS.Verizon\Nop.Plugin.SMS.Verizon.pdb" />
     <Content Include="Plugins\Tax.CountryStateZip\Description.txt" />
     <Content Include="Plugins\Tax.CountryStateZip\logo.jpg" />
     <Content Include="Plugins\Tax.CountryStateZip\Nop.Plugin.Tax.CountryStateZip.dll" />
@@ -1347,9 +1343,6 @@
     <Content Include="Plugins\Shipping.USPS\Nop.Plugin.Shipping.USPS.dll.config" />
     <Content Include="Plugins\Shipping.USPS\Views\ShippingUSPS\Configure.cshtml" />
     <Content Include="Plugins\Shipping.USPS\web.config" />
-    <Content Include="Plugins\SMS.Verizon\Nop.Plugin.SMS.Verizon.dll.config" />
-    <Content Include="Plugins\SMS.Verizon\Views\SmsVerizon\Configure.cshtml" />
-    <Content Include="Plugins\SMS.Verizon\web.config" />
     <Content Include="Plugins\Tax.CountryStateZip\Nop.Plugin.Tax.CountryStateZip.dll.config" />
     <Content Include="Plugins\Tax.CountryStateZip\Views\TaxCountryStateZip\Configure.cshtml" />
     <Content Include="Plugins\Tax.CountryStateZip\web.config" />
@@ -2587,7 +2580,9 @@
     <Content Include="Themes\NopShop\Views\Shared\_ColumnsOneHomepage.cshtml" />
     <Content Include="Themes\NopShop\Views\Shared\_ColumnsOneContainer.cshtml" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Plugins\SMS.Verizon\" />
+  </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Libraries\Nop.Core\Nop.Core.csproj">
       <Project>{6BDA8332-939F-45B7-A25E-7A797260AE59}</Project>
