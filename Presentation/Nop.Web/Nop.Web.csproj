@@ -2327,8 +2327,8 @@
     <Content Include="Themes\NopShop\Views\Web.config" />
     <Content Include="Themes\NopShop\Views\Shared\_ColumnsOneHomepage.cshtml" />
     <Content Include="Themes\NopShop\Views\Shared\_ColumnsOneContainer.cshtml" />
-    <Content Include="Themes\NopShop\Content\css\images\logo.png.bak" />
-    <Content Include="Themes\NopShop\Content\css\images\orange_logo.png.bak" />
+    <Content Include="Themes\NopShop\Content\css\images\logo.bak.png" />
+    <Content Include="Themes\NopShop\Content\css\images\orange_logo.bak.png" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
