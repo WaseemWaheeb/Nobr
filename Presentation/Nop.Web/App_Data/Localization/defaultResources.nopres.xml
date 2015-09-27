@@ -11125,7 +11125,7 @@
     <Value>In-Store Pickup ({0})</Value>
   </LocaleResource>
   <LocaleResource Name="Checkout.PickUpInStore.Description">
-    <Value>Pick up your items at the store (put your store address here)</Value>
+    <Value>Pick up your items at the store (Latha Township, Yangon, Myanmar)</Value>
   </LocaleResource>
   <LocaleResource Name="Checkout.PickUpInStore.MethodName">
     <Value>In-Store Pickup</Value>
