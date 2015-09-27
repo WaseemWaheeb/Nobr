@@ -1631,6 +1631,7 @@
     <Content Include="Themes\SlopprShop\Content\images\ie_warning.jpg" />
     <Content Include="Themes\SlopprShop\Content\images\last.png" />
     <Content Include="Themes\SlopprShop\Content\images\loading.gif" />
+    <Content Include="Themes\SlopprShop\Content\images\logo.png" />
     <Content Include="Themes\SlopprShop\Content\images\menu-icon.png" />
     <Content Include="Themes\SlopprShop\Content\images\move.png" />
     <Content Include="Themes\SlopprShop\Content\images\new.png" />
@@ -1646,7 +1647,6 @@
     <Content Include="Themes\SlopprShop\Content\images\rss.png" />
     <Content Include="Themes\SlopprShop\Content\images\shipping.png" />
     <Content Include="Themes\SlopprShop\Content\images\shopping-bag.png" />
-    <Content Include="Themes\SlopprShop\Content\images\logo.jpg" />
     <Content Include="Themes\SlopprShop\Content\images\social-sprite.png" />
     <Content Include="Themes\SlopprShop\Content\images\subscribe-button.png" />
     <Content Include="Themes\SlopprShop\Content\images\toggle-black.png" />
