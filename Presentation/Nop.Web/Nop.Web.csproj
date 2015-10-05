@@ -1039,6 +1039,7 @@
     <Content Include="Content\tinymce\skins\lightgray\skin.min.css" />
     <Content Include="Content\tinymce\themes\modern\theme.min.js" />
     <Content Include="Content\tinymce\tinymce.min.js" />
+    <Content Include="favicon.ico" />
     <Content Include="Plugins\bin\Index.htm" />
     <Content Include="Scripts\fineuploader\edit.gif" />
     <Content Include="Scripts\fineuploader\fineuploader-4.2.2.css" />
@@ -1083,7 +1084,6 @@
     <Content Include="Content\tinymce\plugins\jbimages\langs\ru_dlg.js" />
     <Content Include="Content\tinymce\plugins\jbimages\plugin.js" />
     <Content Include="Content\tinymce\plugins\jbimages\plugin.min.js" />
-    <Content Include="favicon.ico" />
     <Content Include="Scripts\admin.common.js" />
     <Content Include="Scripts\farbtastic.js" />
     <Content Include="Content\tinymce\plugins\jbimages\readme" />
