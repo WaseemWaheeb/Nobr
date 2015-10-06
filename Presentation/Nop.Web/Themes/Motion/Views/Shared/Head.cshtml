@@ -1,0 +1,56 @@
+﻿@using Nop.Web.Framework;
+@using Nop.Core.Infrastructure;
+@using Nop.Web.Framework.UI;
+@using Nop.Core;
+@{
+    var supportRtl = EngineContext.Current.Resolve<IWorkContext>().WorkingLanguage.Rtl;
+    var browser = Request.Browser;
+
+    // At this point the plug-in css is already added, so we must use AppendCssFileParts to be sure that the theme css is loaded first!
+    
+    var isIeEightOrLess = false;
+    if (browser.Browser == "IE" && browser.MajorVersion <= 8)
+    {
+        isIeEightOrLess = true;
+    }
+    if (isIeEightOrLess)
+    {
+        Html.AppendCssFileParts("~/Themes/Motion/Content/css/ie8-fix.css");
+    }
+    Html.AppendCssFileParts("~/Plugins/SevenSpikes.Core/Styles/perfect-scrollbar.min.css");
+    if (supportRtl)
+    {
+        if (browser.Browser == "Safari")
+        {
+            Html.AppendCssFileParts("~/Themes/Motion/Content/CSS/safari-fix.rtl.css");
+        }
+        Html.AppendCssFileParts("~/Themes/Motion/Content/CSS/forum.rtl.css");
+        Html.AppendCssFileParts("~/Themes/Motion/Content/CSS/980.rtl.css");
+        Html.AppendCssFileParts("~/Themes/Motion/Content/CSS/768.rtl.css");
+        Html.AppendCssFileParts("~/Themes/Motion/Content/CSS/480.rtl.css");
+        Html.AppendCssFileParts("~/Themes/Motion/Content/CSS/mobile-only.rtl.css");
+        Html.AppendCssFileParts("~/Themes/Motion/Content/CSS/tables.rtl.css");
+    }
+    Html.AppendCssFileParts("~/Themes/Motion/Content/CSS/forum.css");
+    Html.AppendCssFileParts("~/Themes/Motion/Content/CSS/980.css");
+    Html.AppendCssFileParts("~/Themes/Motion/Content/CSS/768.css");
+    Html.AppendCssFileParts("~/Themes/Motion/Content/CSS/480.css");
+    Html.AppendCssFileParts("~/Themes/Motion/Content/CSS/mobile-only.css");
+    Html.AppendCssFileParts("~/Themes/Motion/Content/CSS/tables.css");
+
+    if (supportRtl)
+    {
+        Html.AppendCssFileParts("~/Themes/Motion/Content/CSS/styles.rtl.css");
+    }
+    Html.AppendCssFileParts("~/Themes/Motion/Content/CSS/styles.css");
+
+    Html.AddScriptParts("~/Plugins/SevenSpikes.Core/Scripts/footable.js");
+    Html.AddScriptParts("~/Plugins/SevenSpikes.Core/Scripts/perfect-scrollbar.min.js");
+    Html.AddScriptParts("~/Plugins/SevenSpikes.Core/Scripts/SevenSpikesExtensions.js");
+    if (isIeEightOrLess)
+    {
+        Html.AddScriptParts("~/Plugins/SevenSpikes.Core/Scripts/selectivizr.min.js");
+        Html.AddScriptParts("~/Plugins/SevenSpikes.Core/Scripts/respond.min.js");
+    }
+    Html.AddScriptParts("~/Themes/Motion/Content/scripts/Motion.js");    
+}

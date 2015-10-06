@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Language Name="English">
+  <LocaleResource Name="SevenSpikes.MotionTheme">
+    <Value>Nop Motion Theme</Value>
+  </LocaleResource>
+  <LocaleResource Name="SevenSpikes.Themes.Motion.Admin.Settings">
+    <Value>Settings</Value>
+  </LocaleResource>
+  <LocaleResource Name="SevenSpikes.Themes.Motion.Admin.Settings.ThemeSettings">
+    <Value>Motion Theme Settings</Value>
+  </LocaleResource>
+  <LocaleResource Name="SevenSpikes.Themes.Motion.Admin.Settings.ThemeSettings.Preset">
+    <Value>Preset</Value>
+  </LocaleResource>
+  <LocaleResource Name="SevenSpikes.Themes.Motion.Admin.Settings.ThemeSettings.Preset.Hint">
+    <Value>Choose your color preset of the theme.</Value>
+  </LocaleResource>
+  <LocaleResource Name="SevenSpikes.Themes.Motion.Admin.Settings.ThemeSettings.Texture">
+    <Value>Texture</Value>
+  </LocaleResource>
+  <LocaleResource Name="SevenSpikes.Themes.Motion.Admin.Settings.ThemeSettings.Texture.Hint">
+    <Value>Choose your background texture of the theme.</Value>
+  </LocaleResource>
+  <LocaleResource Name="SevenSpikes.Themes.Motion.Common.CompanyInfo">
+    <Value>Company Info</Value>
+  </LocaleResource>
+  <LocaleResource Name="SevenSpikes.Themes.Motion.Common.Contact">
+    <Value>Contact</Value>
+  </LocaleResource>
+  <LocaleResource Name="SevenSpikes.Themes.Motion.Common.CustomerServices">
+    <Value>Customer services</Value>
+  </LocaleResource>
+  <LocaleResource Name="SevenSpikes.Themes.Motion.Common.EmailDomain">
+    <Value>store.com</Value>
+  </LocaleResource>
+  <LocaleResource Name="SevenSpikes.Themes.Motion.Common.EmailAt">
+    <Value>[at]</Value>
+  </LocaleResource>
+  <LocaleResource Name="SevenSpikes.Themes.Motion.Common.EmailName">
+    <Value>info</Value>
+  </LocaleResource>
+  <LocaleResource Name="SevenSpikes.Themes.Motion.Common.FAQ">
+    <Value>FAQ</Value>
+  </LocaleResource>
+  <LocaleResource Name="SevenSpikes.Themes.Motion.Common.FeaturedCategories">
+    <Value>Featured categories</Value>
+  </LocaleResource>
+  <LocaleResource Name="SevenSpikes.Themes.Motion.Common.GoTo">
+    <Value>Go to...</Value>
+  </LocaleResource>
+  <LocaleResource Name="SevenSpikes.Themes.Motion.Common.GoToPage">
+    <Value>Product's page</Value>
+  </LocaleResource>
+  <LocaleResource Name="SevenSpikes.Themes.Motion.Common.Help">
+    <Value>Help</Value>
+  </LocaleResource>
+  <LocaleResource Name="SevenSpikes.Themes.Motion.Common.Mobile">
+    <Value>+555 (Mobile) 321654</Value>
+  </LocaleResource>
+  <LocaleResource Name="SevenSpikes.Themes.Motion.Common.OurOffers">
+    <Value>Our Offers</Value>
+  </LocaleResource>
+  <LocaleResource Name="SevenSpikes.Themes.Motion.Common.Phone">
+    <Value>+444 (Phone) 123456</Value>
+  </LocaleResource>
+  <LocaleResource Name="SevenSpikes.Themes.Motion.Common.Returns">
+    <Value>Returns</Value>
+  </LocaleResource>
+  <LocaleResource Name="SevenSpikes.Themes.Motion.Common.Skype">
+    <Value>motion_theme</Value>
+  </LocaleResource>
+  <LocaleResource Name="SevenSpikes.Themes.Motion.Common.Social">
+    <Value>Social</Value>
+  </LocaleResource>
+  <LocaleResource Name="ShoppingCart">
+    <Value>Shopping cart</Value>
+  </LocaleResource>
+  <LocaleResource Name="ShoppingCart.AddToCart">
+    <Value>Buy</Value>
+  </LocaleResource>
+  <LocaleResource Name="HomePage">
+    <Value>Home Page</Value>
+  </LocaleResource>
+  <LocaleResource Name="HomePage.Categories">
+    <Value>Featured Categories</Value>
+  </LocaleResource>
+  <LocaleResource Name="Newsletter">
+    <Value>Newsletter</Value>
+  </LocaleResource>
+  <LocaleResource Name="Newsletter.Title">
+    <Value>Newsletter</Value>
+  </LocaleResource>
+  <LocaleResource Name="Order.Shipments.ID">
+    <Value>Shipments ID</Value>
+  </LocaleResource>
+</Language>

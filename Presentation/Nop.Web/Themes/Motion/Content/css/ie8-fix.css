@@ -1,0 +1,116 @@
+.motion-theme-roller {
+    left: -300px !important;
+}
+.motion-theme-roller.opened {
+    left: 0 !important;
+}
+
+/* HEADER MENU */
+
+    .header-menu .sublist li {
+        background: #fff;
+    }
+
+        .header-menu .sublist > li > a:before {
+            display: none !important;
+        }
+            .header-menu .sublist > li:hover > a {
+                background: #f3f3f3;
+            }
+
+/* ITEM BOX */
+
+    .product-grid .item-box,
+    .product-list .item-box {
+        width: 33.3333333%;
+        text-align: center;
+    }
+        .product-grid .item-box:nth-child(3n+1),
+        .product-list .item-box:nth-child(3n+1) {
+            clear: both;
+        }
+
+    .item-box .prices {
+        margin-left: 0;
+    }
+        .item-box .prices:before {
+            display: none;
+        }
+
+/* QUICKVIEW */
+
+    .quick-view-button {
+        filter: alpha(opacity=0);
+    }
+        .item-box:hover .quick-view-button {
+            filter: alpha(opacity=100);
+        }
+
+    .quickView {
+        top: 20px !important;
+    }
+
+/* PRODUCT PAGE */
+
+    .overview .prices {
+        padding-left: 12px;
+        padding-right: 12px;
+        margin-left: 0;
+    }
+        .overview .prices:before {
+            display: none !important;
+        }
+    .overview .add-to-cart-button {
+        padding-right: 10px;
+    }
+
+    .giftcard > div:last-child {
+        width: 100%;
+    }
+        .giftcard input {
+            max-width: 90%;
+        }
+
+/* SHOPPING CART */
+
+    .continue-shopping-wrap:before {
+        display: none !important;
+    }
+
+    .checkout-page .address-item,
+    .checkout-page .address-item:nth-child(2n+1) {
+        width: 31.33333333333333%;
+        clear: none;
+        text-align: center;
+    }
+    .checkout-page .address-item:nth-child(3n+1) {
+        clear: both;
+    }
+
+/* CONTACT US & EMAILAFRIEND */
+
+    .contact-page .inputs .input-box {
+        width: 300px;
+    }
+
+/* FOOTER */
+
+    .footer-top .footer-block {
+        clear: none !important;
+        width: 40%;
+    }
+    .footer-top .footer-block:nth-child(1) {
+        width: 26%;
+    }
+    .footer-top .footer-block:nth-child(2) {
+        width: 30%;
+        margin-right: 4%;
+    }
+    .newsletter-email input[type="text"] {
+        width: 279px;
+    }
+
+    .footer-middle .footer-block {
+        clear: none !important;
+        width: 25%;
+    }

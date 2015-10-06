@@ -1,0 +1,33 @@
+﻿@using Nop.Core
+@using Nop.Core.Infrastructure
+@using Nop.Services.Localization
+@using Nop.Web.Framework.Themes
+@{
+    var currentThemeName = EngineContext.Current.Resolve<IThemeContext>().WorkingThemeName;
+    var logoPath = "~/Themes/" + currentThemeName + "/Content/img/logo.png";
+
+    var motionLogo = @Html.Widget("motion_theme_logo");
+}
+<div class="header">
+    @Html.Widget("header")
+    <div class="header-top">
+        @Html.Action("HeaderLinks", "Common")
+    </div>
+    <div class="header-bottom">
+        <div class="header-centering">
+            <div class="header-logo">
+                <a href="@Url.RouteUrl("HomePage")" class="logo">
+                    @if (!MvcHtmlString.IsNullOrEmpty(motionLogo))
+                    {
+                        @motionLogo
+                    }
+                    else
+                    {
+                        string storeName = EngineContext.Current.Resolve<IStoreContext>().CurrentStore.GetLocalized(x => x.Name);
+                        <img title="" alt="@storeName" src="@Url.Content(logoPath)">
+                    }
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

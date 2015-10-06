@@ -1,0 +1,21 @@
+﻿.product-list .quick-view-button {
+    left: auto;
+    right: 72px;
+}
+
+.quickViewWindow .back-in-stock-subscription {
+	clear: right;
+}
+.purchase-area .prices {
+    float: left;
+}
+
+/********* GIFTCARD *********/
+
+.quickViewWindow .giftcard {
+    margin-right: 0;
+}
+.quickViewWindow .giftcard label {
+	margin: 0 0 0 10px;
+	text-align: right;
+}

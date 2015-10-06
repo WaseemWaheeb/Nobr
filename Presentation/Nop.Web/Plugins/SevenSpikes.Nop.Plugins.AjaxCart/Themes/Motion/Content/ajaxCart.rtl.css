@@ -1,0 +1,15 @@
+﻿/*** GROPED PRODUCTS WINDOW ***/
+
+
+.miniProductDetailsView .product-details-page .overview {
+    margin-right: 140px;
+    margin-left: 0;
+}
+.miniProductDetailsView .add-to-cart > *,
+.miniProductDetailsView .add-button-wrap {
+    float:right;
+    margin: 0;
+}
+.miniProductDetailsView .giftcard div {
+	text-align: right;
+}

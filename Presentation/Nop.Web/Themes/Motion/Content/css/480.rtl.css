@@ -1,0 +1,126 @@
+﻿@media all and (min-width: 481px) {
+
+/* CATEGORY PAGE & GRIDS */
+
+    .product-grid .item-box,
+    .product-list .item-box {
+        float: right;
+    }
+
+    .manufacturer-grid {
+        text-align: right;
+    }
+
+/* QUICK TABS */
+
+    .ui-tabs .ui-tabs-nav li {
+        float: right;
+    }
+
+/* ATTRIBUTES */
+
+    .attributes dt,
+    .attributes dd {
+        float: right;
+    }
+    .attributes dt {
+        margin: 0 0 10px 10px;
+    }
+
+    .attributes li {
+        float: right;
+    }
+
+/* BLOG & NEWS */
+
+    .comment-info {
+	    float: right;
+        border-right: none;
+        border-left: 1px solid #ccc;
+        padding: 0 0 0 10px;
+    }
+    .comment-content {
+        text-align: right;
+    }
+    .comment-info + .comment-content {
+	    margin: 0 135px 0 0;
+    }
+
+/* REGISTRATION, LOGIN, MY ACCOUNT */
+
+    .address-list,
+    .order-list {
+        text-align: right;
+    }
+        .section .buttons {
+            text-align: left;
+        }
+
+/* SHOPPING CART & CHECKOUT */
+
+    .shipment-details-page .shipment-overview > ul {
+        float: right;
+    }
+
+    .checkout-page .address-item {
+        float: right;
+    }
+
+}
+
+@media all and (min-width: 600px) {
+    
+    .responsive-nav-wrapper > div > span {
+        padding: 12px 66px 12px 24px;
+    }
+    .responsive-nav-wrapper .menu-title {
+        background-position: 101px center;
+    }
+    .responsive-nav-wrapper .search-wrap {
+        background-position: 105px center;
+    }
+        .responsive-nav-wrapper .search-wrap > span {
+            padding-left: 12px;
+            padding-right: 55px;
+        }
+    .responsive-nav-wrapper .filters-button {
+        background-position: 91px center;
+    }
+        .responsive-nav-wrapper .filters-button > span {
+            padding-left: 0;
+            padding-right: 64px;
+        }
+
+}
+
+    
+/* LEFT/RIGHT COLUMN */
+
+@media all and (min-width: 481px) and (max-width: 768px) {
+    .block {
+        margin: 0 2% 2% 0;
+        float: right;
+    }
+    .block:nth-of-type(2n+1) {
+        margin-right: 0;
+    }
+}
+
+
+/* PRODUCT PAGE */
+
+
+@media all and (min-width: 580px) and (max-width: 660px) {
+
+    .product-variant-list {
+        text-align: right;
+    }
+    .variant-picture {
+        float: right;
+    }
+    .variant-overview {
+        margin-right: 230px;
+        margin-left: 0;
+    }
+
+}
