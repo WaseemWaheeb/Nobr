@@ -188,4 +188,6 @@ GeneratedArtifacts/
 _Pvt_Extensions/
 ModelManifest.xml
 
+!/Plugins/Nop.Plugin.Misc.AzureBlob/packages/*
+!/Plugins/Nop.Plugin.Misc.AzureBlob/SQL/*
 !/Presentation/Nop.Web/Plugins/SevenSpikes.*/*
