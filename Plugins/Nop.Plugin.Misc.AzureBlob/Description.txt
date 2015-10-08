@@ -1,0 +1,8 @@
+﻿Group: 1T-Partner
+FriendlyName: Azure Blob Storage
+SystemName: Misc.AzureBlob
+Version: 1.6
+SupportedVersions: 3.60
+Author: IT-Partner
+DisplayOrder: 1
+FileName: Nop.Plugin.Misc.AzureBlob.dll

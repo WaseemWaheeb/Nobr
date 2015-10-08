@@ -1,0 +1,143 @@
+﻿@{
+    Layout = "";
+}
+@model Nop.Plugin.Misc.AzureBlob.Models.ConfigurationModel
+<style>
+    .data {
+        width: auto;
+        margin: 5px;
+        padding-top: 14px;
+        display: inline-block;
+        float: left;
+    }
+</style>
+@using Nop.Web.Framework;
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <table class="adminContent">
+        <tr>
+            <td class="adminTitle">
+                @Html.NopLabelFor(model => model.Account):
+            </td>
+            <td class="adminData">
+                @Html.TextBoxFor(model => model.Account)
+                @Html.ValidationMessageFor(model => model.Account)
+            </td>
+        </tr>
+        <tr>
+            <td class="adminTitle">
+                @Html.NopLabelFor(model => model.AccountKey):
+            </td>
+            <td class="adminData">
+                @Html.TextBoxFor(model => model.AccountKey)
+                @Html.ValidationMessageFor(model => model.AccountKey)
+            </td>
+        </tr>
+        <tr>
+            <td class="adminTitle">
+                @Html.NopLabelFor(model => model.Container):
+            </td>
+            <td class="adminData">
+                @Html.TextBoxFor(model => model.Container)
+                @Html.ValidationMessageFor(model => model.Container)
+            </td>
+        </tr>
+        <tr>
+            <td class="adminTitle">
+                @Html.NopLabelFor(model => model.ContainerForPictures):
+            </td>
+            <td class="adminData">
+                @Html.TextBoxFor(model => model.ContainerForPictures)
+                @Html.ValidationMessageFor(model => model.ContainerForPictures)
+            </td>
+        </tr>
+        <tr>
+            <td class="adminTitle">
+                @Html.NopLabelFor(model => model.UseCDN):
+            </td>
+            <td class="adminData" id="cdnData" data-cdn="Model.UseCDN">
+                @Html.CheckBoxFor(model => model.UseCDN)
+                @Html.ValidationMessageFor(model => model.UseCDN)
+                @Html.TextBoxFor(model => model.CDN)
+                @Html.ValidationMessageFor(model => model.CDN)
+            </td>
+
+        </tr>
+        <tr>
+            <td class="adminTitle">
+                @Html.NopLabelFor(model => model.AlwaysShowMainImage):
+            </td>
+            <td class="adminData">
+                @Html.CheckBoxFor(model => model.AlwaysShowMainImage)
+                @Html.ValidationMessageFor(model => model.AlwaysShowMainImage)
+            </td>
+        </tr>
+        <tr>
+            <td class="adminTitle">
+                @Html.NopLabelFor(model => model.CheckIfImageExist):
+            </td>
+            <td class="adminData">
+                @Html.CheckBoxFor(model => model.CheckIfImageExist)
+                @Html.ValidationMessageFor(model => model.CheckIfImageExist)
+            </td>
+        </tr>
+        <tr>
+            <td class="adminTitle">
+                @Html.NopLabelFor(model => model.PictureStoreType):
+            </td>
+            <td class="adminData">
+                @foreach (var ML in Model.PictureStoreTypeList)
+                {
+                    <div class="data">
+                        @Html.RadioButtonFor(model => model.PictureStoreType, ML)
+                    </div>
+                    <div class="data">
+                        @T("AzureBlob.ConfigureModel." + ML)
+                    </div>
+                }
+
+                <div class="data">
+                    <input type="submit" name="change-pictures-storage" class="k-button" onclick=" return confirm('@T("admin.common.areyousure")'); " value="@T("AzureBlob.ConfigureModel.ChangeStorage")"/>
+                </div>
+                <div class="data">
+                    @T("AzureBlob.ConfigureModel.NOT")
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td class="adminTitle">
+                @Html.NopLabelFor(model => model.DownloadStoreType):
+            </td>
+            <td class="adminData">
+
+                <div class="data">
+                    @foreach (var ML in Model.DownloadStoreTypeList)
+                    {
+                        <div class="data">
+                            @Html.RadioButtonFor(model => model.DownloadStoreType, ML)
+                        </div>
+                        <div class="data">
+                            @T("AzureBlob.ConfigureModel." + ML)
+                        </div>
+                    }
+                </div>
+                <div class="data">
+
+                    <input type="submit" name="change-files-storage" class="k-button" onclick=" return confirm('@T("admin.common.areyousure")'); " value="@T("AzureBlob.ConfigureModel.ChangeStorage")"/>
+                </div>
+                <div class="data">
+                    @T("AzureBlob.ConfigureModel.NOT")
+                </div>
+            </td>
+
+        </tr>
+        <tr>
+            <td colspan="2" width="100%">
+                <input type="submit" name="save-configure" onclick=" return confirm('@T("admin.common.areyousure")'); " class=" k-button" value="@T("AzureBlob.ConfigureModel.ButtonSave")" />
+                <input type="submit" name="add-default-images" class="k-button" value=" @T("AzureBlob.ConfigureModel.AddDefaultImages") " />
+            </td>
+        </tr>
+    </table>
+}

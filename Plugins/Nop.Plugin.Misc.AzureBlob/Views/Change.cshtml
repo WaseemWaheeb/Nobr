@@ -1,0 +1,50 @@
+﻿@using (Html.BeginForm("ChangeInformation", "MiscAzureBlob", FormMethod.Post))
+{
+    <table>
+
+        <tr>
+            <td class="adminTitle">
+                <img alt="@T("AzureBlob.ConfigureModel.PictureStoreType.Hint")" src="/Administration/Content/images/ico-help.gif" title="@T("AzureBlob.ConfigureModel.PictureStoreType.Hint")">
+                @T("AzureBlob.ConfigureModel.PictureStoreType"):
+            </td>
+            <td class="adminData">
+                @foreach (var ML in ViewBag.PictureStoreTypeList)
+                {
+                    <div class="data">
+                        <input checked="checked" id="PictureStoreType" name="PictureStoreType" type="radio" value="@ML">
+                    </div>
+                    <div class="data">
+                        @T("AzureBlob.ConfigureModel." + ML)
+                    </div>
+                }
+                <div class="data">
+                    <input type="submit" class="k-button" onclick="return confirm('@T("admin.common.areyousure")'); " value="@T("AzureBlob.ConfigureModel.ChangeStorage")" />
+                </div>
+                <div class="data">
+                    @T("AzureBlob.ConfigureModel.NOT")
+                </div>
+            </td>
+        </tr>
+    </table>
+
+}
+
+<script>
+    $(document).ready(function () {
+        $("[name='IntoFile']").click(function () {
+            $("[name='IntoAzure']").removeAttr('checked');
+            $("[name='IntoBase']").removeAttr('checked');
+
+        });
+
+        $("[name='IntoAzure']").click(function () {
+            $("[name='IntoFile']").removeAttr('checked');
+            $("[name='IntoBase']").removeAttr('checked');
+
+        });
+        $("[name='IntoBase']").click(function () {
+            $("[name='IntoFile']").removeAttr('checked');
+            $("[name='IntoAzure']").removeAttr('checked');
+        });
+    });
+</script>

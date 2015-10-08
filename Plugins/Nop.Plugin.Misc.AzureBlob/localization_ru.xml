@@ -1,0 +1,59 @@
+﻿<Language Name="Russian">
+  <LocaleResource Name="AzureBlob.ConfigureModel.ConnectionStringName">
+    <Value>Connection String name</Value>
+  </LocaleResource>
+  <LocaleResource Name="AzureBlob.ConfigureModel.ConnectionStringName.Hint">
+    <Value>Введите Connection String Name</Value>
+  </LocaleResource>
+  <LocaleResource Name="AzureBlob.ConfigureModel.ConnectionString">
+    <Value>Connection String </Value>
+  </LocaleResource>
+  <LocaleResource Name="AzureBlob.ConfigureModel.ConnectionString.Hint">
+    <Value>Введите Connection String </Value>
+  </LocaleResource>
+  <LocaleResource Name="AzureBlob.ConfigureModel.Account">
+    <Value>Account</Value>
+  </LocaleResource>
+  <LocaleResource Name="AzureBlob.ConfigureModel.Account.Hint">
+    <Value>Введите название учетной записи Azure Storage</Value>
+  </LocaleResource>
+  <LocaleResource Name="AzureBlob.ConfigureModel.Container.Hint">
+    <Value>Введите имя папки</Value>
+  </LocaleResource>
+  <LocaleResource Name="AzureBlob.ConfigureModel.ButtonSave">
+    <Value>Сохранить</Value>
+  </LocaleResource>
+  <LocaleResource Name="AzureBlob.ConfigureModel.StoreIntoAzure">
+    <Value>Azure</Value>
+  </LocaleResource>
+  <LocaleResource Name="AzureBlob.ConfigureModel.StoreIntoDatabase">
+    <Value>База</Value>
+  </LocaleResource>
+  <LocaleResource Name="AzureBlob.ConfigureModel.StoreIntoFileSystem">
+    <Value>Файловая система</Value>
+  </LocaleResource>
+  <LocaleResource Name="AzureBlob.ConfigureModel.ContainerFoPictures">
+    <Value>Папка для картинок</Value>
+  </LocaleResource>
+  <LocaleResource Name="AzureBlob.ConfigureModel.Container">
+    <Value>Папка для файлов</Value>
+  </LocaleResource>
+  <LocaleResource Name="AzureBlob.ConfigureModel.ChangeStorage">
+    <Value>Изменить</Value>
+  </LocaleResource>
+  <LocaleResource Name="AzureBlob.ConfigureModel.ChangeFilesStorage">
+    <Value>Хранилище для файлов изменено успешно.</Value>
+  </LocaleResource>
+  <LocaleResource Name="AzureBlob.ConfigureModel.ChangePicturesStorage">
+    <Value>Хранилище для картинок изменено успешно.</Value>
+  </LocaleResource>
+  <LocaleResource Name="AzureBlob.ConfigureModel.NOT">
+    <Value>Внимание: Не забудьте скопировать базу прежде чем выбрать эту опцию</Value>
+  </LocaleResource>
+  <LocaleResource Name="AzureBlob.ConfigureModel.PicturesAreStoredInto">
+    <Value>Картинки хранятся в ...: </Value>
+  </LocaleResource>
+  <LocaleResource Name="AzureBlob.ConfigureModel.FilesAreStoredInto">
+    <Value>Файлы хранятся в ...: </Value>
+  </LocaleResource>
+</Language>

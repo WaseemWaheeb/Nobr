@@ -1,0 +1,9 @@
+﻿1. Add Picture File table - done
+2. Save file path to this table - done
+3. Check file in this table if file doesn't exsist in table we will create a  new one - done
+4. Check migration files - done
+4.1 add default settings - done
+4.2 don't allow to uninstall files untill user will not choose the default provider - done
+5. Check performance - done
+6. Add cache. - done
+7. install plugin on our server

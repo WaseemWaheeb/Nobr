@@ -1,0 +1,66 @@
+﻿<Language Name="English">
+  <LocaleResource Name="AzureBlob.ConfigureModel.ConnectionStringName">
+    <Value>Connection String name</Value>
+  </LocaleResource>
+  <LocaleResource Name="AzureBlob.ConfigureModel.ConnectionStringName.Hint">
+    <Value>Enter Connection String name</Value>
+  </LocaleResource>
+  <LocaleResource Name="AzureBlob.ConfigureModel.ConnectionString">
+    <Value>Connection String </Value>
+  </LocaleResource>
+  <LocaleResource Name="AzureBlob.ConfigureModel.ConnectionString.Hint">
+    <Value>Enter Connection String </Value>
+  </LocaleResource>
+  <LocaleResource Name="AzureBlob.ConfigureModel.Account">
+    <Value>Account</Value>
+  </LocaleResource>
+  <LocaleResource Name="AzureBlob.ConfigureModel.Account.Hint">
+    <Value>Enter Account name</Value>
+  </LocaleResource>
+
+  <LocaleResource Name="AzureBlob.ConfigureModel.Container.Hint">
+    <Value>Enter Container name</Value>
+  </LocaleResource>
+  <LocaleResource Name="AzureBlob.ConfigureModel.ButtonSave">
+    <Value>Save</Value>
+  </LocaleResource>
+  <LocaleResource Name="AzureBlob.ConfigureModel.ButtonSave">
+    <Value>Save</Value>
+  </LocaleResource>
+  <LocaleResource Name="AzureBlob.ConfigureModel.ButtonSave">
+    <Value>Save</Value>
+  </LocaleResource>
+  <LocaleResource Name="AzureBlob.ConfigureModel.StoreIntoAzure">
+    <Value>Azure</Value>
+  </LocaleResource>
+  <LocaleResource Name="AzureBlob.ConfigureModel.StoreIntoDatabase">
+    <Value>Database</Value>
+  </LocaleResource>
+  <LocaleResource Name="AzureBlob.ConfigureModel.StoreIntoFileSystem">
+    <Value>File system</Value>
+  </LocaleResource>
+  <LocaleResource Name="AzureBlob.ConfigureModel.ContainerFoPictures">
+    <Value>Container for pictures</Value>    
+  </LocaleResource>
+    <LocaleResource Name="AzureBlob.ConfigureModel.Container">
+    <Value>Container for files</Value>
+  </LocaleResource>
+    <LocaleResource Name="AzureBlob.ConfigureModel.NOT">
+    <Value>NOTE: Don not forget to backup your database before changing this option</Value>
+  </LocaleResource>
+     <LocaleResource Name="AzureBlob.ConfigureModel.PicturesAreStoredInto">
+    <Value>Pictures are stored into...: </Value>
+  </LocaleResource>
+      <LocaleResource Name="AzureBlob.ConfigureModel.FilesAreStoredInto">
+    <Value>Files are stored into...: </Value>
+  </LocaleResource>
+ <LocaleResource Name="AzureBlob.ConfigureModel.ChangeStorage">
+    <Value>Change</Value>
+  </LocaleResource>
+ <LocaleResource Name="AzureBlob.ConfigureModel.ChangeFilesStorage">
+    <Value>Files storage has been changed successfully.</Value>
+  </LocaleResource>
+ <LocaleResource Name="AzureBlob.ConfigureModel.ChangePicturesStorage">
+    <Value>Pictures storage has been changed successfully.</Value>
+  </LocaleResource>
+</Language>
