@@ -192,6 +192,7 @@ _Pvt_Extensions/
 ModelManifest.xml
 
 !/Plugins/Nop.Plugin.Misc.AzureBlob/packages/zlib-v1.9/Debug/
+!/Plugins/Nop.Plugin.Misc.AzureBlob/packages/zlib-v1.9/Debug/*.pdb
 !/Plugins/Nop.Plugin.Misc.AzureBlob/packages/zlib-v1.9/Release/
 !/Plugins/Nop.Plugin.Misc.AzureBlob/SQL/
 !/Presentation/Nop.Web/Plugins/SevenSpikes.*/*
