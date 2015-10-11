@@ -58,7 +58,7 @@ namespace Nop.Plugin.Misc.AzureBlob.Services
                 blob.FetchAttributes();
                 return blob.Uri.ToString();
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 return "";
             }
@@ -92,7 +92,7 @@ namespace Nop.Plugin.Misc.AzureBlob.Services
             if (blobSource.Exists())
             {
                 CloudBlockBlob blobTarget = cloudBlobContainer.GetBlockBlobReference(newBlobName);
-                blobTarget.StartCopyFromBlob(blobSource);
+                blobTarget.StartCopy(blobSource);
                 blobSource.Delete();
             }
 

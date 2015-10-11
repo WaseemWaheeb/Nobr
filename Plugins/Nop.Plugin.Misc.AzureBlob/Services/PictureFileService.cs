@@ -77,8 +77,8 @@ namespace Nop.Plugin.Misc.AzureBlob.Services
         /// </summary>
         public virtual void DeletePictureFile(int id)
         {
-            if (id == null)
-                throw new ArgumentNullException("id");
+            //if (id == null)
+            //    throw new ArgumentNullException("id");
             var query = from pfr in _pictureFileRepository.Table
                         where pfr.Id == id
                         select pfr;
@@ -98,8 +98,8 @@ namespace Nop.Plugin.Misc.AzureBlob.Services
         /// </summary>
         public virtual void DeletePictureFiles(int pictureId)
         {
-            if (pictureId == null)
-                throw new ArgumentNullException("pictureId");
+            //if (pictureId == null)
+            //    throw new ArgumentNullException("pictureId");
             var query = from pfr in _pictureFileRepository.Table
                         where pfr.PictureId == pictureId
                         select pfr;

@@ -30,11 +30,11 @@ namespace Nop.Plugin.Misc.AzureBlob
                 .As<IRepository<PictureFile>>()
                 .WithParameter(ResolvedParameter.ForNamed<IDbContext>(CONTEXT_NAME))
                 .InstancePerLifetimeScope();
-            builder.RegisterType<PictureFileService>().As<IPictureFileService>().InstancePerHttpRequest();
-            builder.RegisterType<AzureBlobInstallationService>().As<AzureBlobInstallationService>().InstancePerHttpRequest();
-            builder.RegisterType<BlobService>().As<BlobService>().InstancePerHttpRequest();
-            builder.RegisterType<StoreDownloadService>().As<IDownloadService>().InstancePerHttpRequest();
-            builder.RegisterType<StorePictureService>().As<IPictureService>().InstancePerHttpRequest();
+            builder.RegisterType<PictureFileService>().As<IPictureFileService>().InstancePerRequest();
+            builder.RegisterType<AzureBlobInstallationService>().As<AzureBlobInstallationService>().InstancePerRequest();
+            builder.RegisterType<BlobService>().As<BlobService>().InstancePerRequest();
+            builder.RegisterType<StoreDownloadService>().As<IDownloadService>().InstancePerRequest();
+            builder.RegisterType<StorePictureService>().As<IPictureService>().InstancePerRequest();
         }
 
         public int Order

@@ -348,7 +348,7 @@ namespace Nop.Plugin.Misc.AzureBlob.Services
                     var url = GetThumbUrl(thumbFileName, storeLocation);
                     return url;
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
                     //_logger.Error(ex.Message, ex, null);
                     //_logger.Information("GetDefaultPictureUrl " + targetSize);
