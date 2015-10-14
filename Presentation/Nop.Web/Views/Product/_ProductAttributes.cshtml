@@ -38,6 +38,10 @@
                             {
                                 <option value="0">---</option>
                             }
+                            else
+                            {
+                                <option value="">-- Choose One --</option>
+                            }
                             @foreach (var attributeValue in attribute.Values)
                             {
                                 var attributeName = String.IsNullOrEmpty(attributeValue.PriceAdjustment) ?
