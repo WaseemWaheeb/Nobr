@@ -65,6 +65,7 @@ namespace Nop.Plugin.Misc.AzureBlob.Controllers
             {
                 Account = azureBlobSetting.Account,
                 AccountKey = azureBlobSetting.AccountKey,
+                UseDevAccount = azureBlobSetting.UseDevAccount,
                 ContainerForPictures = azureBlobSetting.ContainerForPictures,
                 Container = azureBlobSetting.Container,
                 UseCDN = azureBlobSetting.UseCDN,
@@ -129,7 +130,8 @@ namespace Nop.Plugin.Misc.AzureBlob.Controllers
             azureBlobSetting.Container = model.Container;
             azureBlobSetting.ContainerForPictures = model.ContainerForPictures;
             azureBlobSetting.AccountKey = model.AccountKey;
-            azureBlobSetting.ConnectionString = String.Format("DefaultEndpointsProtocol=https;AccountName={0};AccountKey={1}", model.Account, model.AccountKey);
+            azureBlobSetting.UseDevAccount = model.UseDevAccount;
+            azureBlobSetting.ConnectionString = AzureConnectionStringFactory.Create(model.Account, model.AccountKey, model.UseDevAccount);
             azureBlobSetting.Account = model.Account;
             azureBlobSetting.UseCDN = model.UseCDN;
             azureBlobSetting.CDN = model.CDN;

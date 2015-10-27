@@ -96,7 +96,8 @@ namespace Nop.Plugin.Misc.AzureBlob
             this.AddOrUpdatePluginLocaleResource("AzureBlob.ConfigureModel.CheckIfImageExist.Hint", "Please uncheck this checkbox if you want to improve performance. Plugin will not check existence of images and image thumbnails");
             this.AddOrUpdatePluginLocaleResource("Admin.Configuration.ValidatePictureSettings", "Please enter and save a valid Azure settings(Account Name, Key, Container Name for pictures)");
             this.AddOrUpdatePluginLocaleResource("Admin.Configuration.ValidateDownloadSettings", "Please enter and save a valid Azure settings(Account Name, Key, Container Name for files)");
-       
+            this.AddOrUpdatePluginLocaleResource("AzureBlob.ConfigureModel.UseDevAccount", "UseDevAccount");
+
             base.Install();
         }
         

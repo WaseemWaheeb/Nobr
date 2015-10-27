@@ -36,5 +36,8 @@ namespace Nop.Plugin.Misc.AzureBlob.Models
         public bool AlwaysShowMainImage { get; set; }
         [NopResourceDisplayName("AzureBlob.ConfigureModel.CheckIfImageExist")]
         public bool CheckIfImageExist { get; set; }
+
+        [NopResourceDisplayName("AzureBlob.ConfigureModel.UseDevAccount")]
+        public bool UseDevAccount { get; set; }
     }
 }

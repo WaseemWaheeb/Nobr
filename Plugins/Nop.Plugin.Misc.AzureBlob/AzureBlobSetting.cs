@@ -17,5 +17,6 @@ namespace Nop.Plugin.Misc.AzureBlob
         public string DefaultAvatarImageName { get; set; }
         public bool AlwaysShowMainImage { get; set; }
         public bool CheckIfImageExist { get; set; }
+        public bool UseDevAccount { get; set; }
     }
 }

@@ -40,27 +40,30 @@
     <Value>File system</Value>
   </LocaleResource>
   <LocaleResource Name="AzureBlob.ConfigureModel.ContainerFoPictures">
-    <Value>Container for pictures</Value>    
+    <Value>Container for pictures</Value>
   </LocaleResource>
-    <LocaleResource Name="AzureBlob.ConfigureModel.Container">
+  <LocaleResource Name="AzureBlob.ConfigureModel.Container">
     <Value>Container for files</Value>
   </LocaleResource>
-    <LocaleResource Name="AzureBlob.ConfigureModel.NOT">
+  <LocaleResource Name="AzureBlob.ConfigureModel.NOT">
     <Value>NOTE: Don not forget to backup your database before changing this option</Value>
   </LocaleResource>
-     <LocaleResource Name="AzureBlob.ConfigureModel.PicturesAreStoredInto">
+  <LocaleResource Name="AzureBlob.ConfigureModel.PicturesAreStoredInto">
     <Value>Pictures are stored into...: </Value>
   </LocaleResource>
-      <LocaleResource Name="AzureBlob.ConfigureModel.FilesAreStoredInto">
+  <LocaleResource Name="AzureBlob.ConfigureModel.FilesAreStoredInto">
     <Value>Files are stored into...: </Value>
   </LocaleResource>
- <LocaleResource Name="AzureBlob.ConfigureModel.ChangeStorage">
+  <LocaleResource Name="AzureBlob.ConfigureModel.ChangeStorage">
     <Value>Change</Value>
   </LocaleResource>
- <LocaleResource Name="AzureBlob.ConfigureModel.ChangeFilesStorage">
+  <LocaleResource Name="AzureBlob.ConfigureModel.ChangeFilesStorage">
     <Value>Files storage has been changed successfully.</Value>
   </LocaleResource>
- <LocaleResource Name="AzureBlob.ConfigureModel.ChangePicturesStorage">
+  <LocaleResource Name="AzureBlob.ConfigureModel.ChangePicturesStorage">
     <Value>Pictures storage has been changed successfully.</Value>
+  </LocaleResource>
+  <LocaleResource Name="AzureBlob.ConfigureModel.UseDevAccount">
+    <Value>Use Dev Account</Value>
   </LocaleResource>
 </Language>

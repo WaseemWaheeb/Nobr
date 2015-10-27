@@ -21,10 +21,9 @@ namespace Nop.Plugin.Misc.AzureBlob.Services
         /// set up references to the container, etc.
         /// </summary>
         private CloudBlobContainer SetUpContainer(string storageAccountName,
-          string storageAccountKey, string containerName)
+          string storageAccountKey, string containerName, bool useDevAccount)
         {
-            string connectionString = string.Format(@"DefaultEndpointsProtocol=https;AccountName={0};AccountKey={1}",
-            storageAccountName, storageAccountKey);
+            string connectionString = AzureConnectionStringFactory.Create(storageAccountName, storageAccountKey, useDevAccount);
 
             //get a reference to the container where you want to put the files
             CloudStorageAccount cloudStorageAccount = CloudStorageAccount.Parse(connectionString);
@@ -34,10 +33,10 @@ namespace Nop.Plugin.Misc.AzureBlob.Services
         }
 
         public void RunAtAppStartup(string storageAccountName,
-          string storageAccountKey, string containerName)
+          string storageAccountKey, string containerName, bool useDevAccount)
         {
             ContainerName = containerName;
-            cloudBlobContainer =  SetUpContainer(storageAccountName, storageAccountKey, containerName);
+            cloudBlobContainer =  SetUpContainer(storageAccountName, storageAccountKey, containerName, useDevAccount);
             //just in case, check to see if the container exists,
             //  and create it if it doesn't
             cloudBlobContainer.CreateIfNotExists();

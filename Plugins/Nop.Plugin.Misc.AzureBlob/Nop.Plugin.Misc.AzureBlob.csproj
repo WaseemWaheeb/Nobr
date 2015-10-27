@@ -170,6 +170,7 @@
     <Compile Include="Models\MediaModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RouteProvider.cs" />
+    <Compile Include="Services\AzureConnectionStringFactory.cs" />
     <Compile Include="Services\BlobMethods.cs" />
     <Compile Include="Services\BlobService.cs" />
     <Compile Include="Services\IPictureFileService.cs" />

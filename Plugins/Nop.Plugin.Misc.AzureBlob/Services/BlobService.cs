@@ -37,7 +37,7 @@ namespace Nop.Plugin.Misc.AzureBlob.Services
                 try
                 {
                     _blobMethodsPictures.RunAtAppStartup(_azureBlobSetting.Account, _azureBlobSetting.AccountKey,
-                        _azureBlobSetting.ContainerForPictures);
+                        _azureBlobSetting.ContainerForPictures, _azureBlobSetting.UseDevAccount);
                     return null;
                 }
                 catch (Exception ex)
@@ -58,7 +58,7 @@ namespace Nop.Plugin.Misc.AzureBlob.Services
                 try
                 {
                     _blobMethodsDownload.RunAtAppStartup(_azureBlobSetting.Account, _azureBlobSetting.AccountKey,
-                        _azureBlobSetting.Container);
+                        _azureBlobSetting.Container, _azureBlobSetting.UseDevAccount);
                     return null;
                 }
                 catch (Exception ex)
