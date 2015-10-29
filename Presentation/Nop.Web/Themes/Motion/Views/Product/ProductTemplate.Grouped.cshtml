@@ -114,15 +114,17 @@
                                 @if (!String.IsNullOrWhiteSpace(variant.DefaultPictureModel.ImageUrl))
                                 {
                                     <div class="variant-picture">
-                                        <img alt="@variant.DefaultPictureModel.AlternateText" src="@variant.DefaultPictureModel.ImageUrl"
-                                             title="@variant.DefaultPictureModel.Title" id="main-product-img-@variant.Id" />
+                                        <a href="@Url.RouteUrl("Product", new { SeName = variant.SeName })">
+                                            <img alt="@variant.DefaultPictureModel.AlternateText" src="@variant.DefaultPictureModel.ImageUrl"
+                                                 title="@variant.DefaultPictureModel.Title" id="main-product-img-@variant.Id" />
+                                        </a>
                                     </div>
                                 }
                                 <div class="variant-overview">
                                     @if (!String.IsNullOrWhiteSpace(variant.Name))
                                     {
                                         <div class="variant-name">
-                                            @variant.Name
+                                            <a href="@Url.RouteUrl("Product", new { SeName = variant.SeName })">@variant.Name</a>
                                         </div>
                                     }
                                     @if (!String.IsNullOrWhiteSpace(variant.ShortDescription))
