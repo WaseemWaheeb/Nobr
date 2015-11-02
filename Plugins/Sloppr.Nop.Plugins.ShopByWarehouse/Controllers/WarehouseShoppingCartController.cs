@@ -242,8 +242,7 @@ namespace Sloppr.Nop.Plugins.ShopByWarehouse.Controllers
                 return RedirectToRoute("HomePage");
 
             var warehouseProducts = _productService.SearchProducts()
-                .Where(m => m.WarehouseId == warehouse.Id)
-                .ToList();
+                .Where(m => m.WarehouseId == warehouse.Id);
 
             var cart = _workContext.CurrentCustomer.ShoppingCartItems
                 .Where(sci => sci.ShoppingCartType == ShoppingCartType.ShoppingCart)
