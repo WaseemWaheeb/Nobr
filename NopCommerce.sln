@@ -96,6 +96,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nop.Plugin.Widgets.SocialLi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nop.Plugin.Misc.AzureBlob", "Plugins\Nop.Plugin.Misc.AzureBlob\Nop.Plugin.Misc.AzureBlob.csproj", "{20C1FE92-D402-4487-87D3-695870A10676}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sloppr.Nop.Plugins.ShopByWarehouse", "Plugins\Sloppr.Nop.Plugins.ShopByWarehouse\Sloppr.Nop.Plugins.ShopByWarehouse.csproj", "{DFAB258C-A2C8-4730-92AA-46D944D9E6E7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -496,6 +498,16 @@ Global
 		{20C1FE92-D402-4487-87D3-695870A10676}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{20C1FE92-D402-4487-87D3-695870A10676}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{20C1FE92-D402-4487-87D3-695870A10676}.Release|x86.ActiveCfg = Release|Any CPU
+		{DFAB258C-A2C8-4730-92AA-46D944D9E6E7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DFAB258C-A2C8-4730-92AA-46D944D9E6E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DFAB258C-A2C8-4730-92AA-46D944D9E6E7}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{DFAB258C-A2C8-4730-92AA-46D944D9E6E7}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{DFAB258C-A2C8-4730-92AA-46D944D9E6E7}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{DFAB258C-A2C8-4730-92AA-46D944D9E6E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DFAB258C-A2C8-4730-92AA-46D944D9E6E7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DFAB258C-A2C8-4730-92AA-46D944D9E6E7}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{DFAB258C-A2C8-4730-92AA-46D944D9E6E7}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{DFAB258C-A2C8-4730-92AA-46D944D9E6E7}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -540,6 +552,7 @@ Global
 		{6216A5CA-8599-4B53-8E70-F21CC6D4273C} = {7881B112-7843-4542-B1F7-F99553FB9BB7}
 		{E917406C-E3F8-464B-861B-598EA0CD5AE3} = {7881B112-7843-4542-B1F7-F99553FB9BB7}
 		{20C1FE92-D402-4487-87D3-695870A10676} = {7881B112-7843-4542-B1F7-F99553FB9BB7}
+		{DFAB258C-A2C8-4730-92AA-46D944D9E6E7} = {7881B112-7843-4542-B1F7-F99553FB9BB7}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		EnterpriseLibraryConfigurationToolBinariesPathV6 = packages\EnterpriseLibrary.TransientFaultHandling.6.0.1304.0\lib\portable-net45+win+wp8;packages\EnterpriseLibrary.TransientFaultHandling.Data.6.0.1304.1\lib\NET45
