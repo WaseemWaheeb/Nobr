@@ -28,12 +28,14 @@ using Nop.Services.Payments;
 using Nop.Services.Security;
 using Nop.Services.Shipping;
 using Nop.Services.Tax;
+using Nop.Web.Controllers;
 using Nop.Web.Framework.Security;
 using Nop.Web.Framework.Security.Captcha;
+using Nop.Web.Models.ShoppingCart;
 
 namespace Sloppr.Nop.Plugins.ShopByWarehouse.Controllers
 {
-    public class ShoppingCartController : Controller
+    public class WarehouseShoppingCartController : ShoppingCartController
     {
         #region Fields
 
@@ -86,7 +88,7 @@ namespace Sloppr.Nop.Plugins.ShopByWarehouse.Controllers
 
         #region Constructors
 
-        public ShoppingCartController(IProductService productService,
+        public WarehouseShoppingCartController(IProductService productService,
             IStoreContext storeContext,
             IWorkContext workContext,
             IShoppingCartService shoppingCartService,
@@ -128,6 +130,51 @@ namespace Sloppr.Nop.Plugins.ShopByWarehouse.Controllers
             CaptchaSettings captchaSettings,
             AddressSettings addressSettings,
             RewardPointsSettings rewardPointsSettings)
+            : base(
+                productService,
+                storeContext,
+                workContext,
+                shoppingCartService,
+                pictureService,
+                localizationService,
+                productAttributeService,
+                productAttributeFormatter,
+                productAttributeParser,
+                taxService, 
+                currencyService,
+                priceCalculationService,
+                priceFormatter,
+                checkoutAttributeParser,
+                checkoutAttributeFormatter,
+                orderProcessingService,
+                discountService,
+                customerService,
+                giftCardService,
+                countryService,
+                stateProvinceService,
+                shippingService,
+                orderTotalCalculationService,
+                checkoutAttributeService,
+                paymentService,
+                workflowMessageService,
+                permissionService,
+                downloadService,
+                cacheManager,
+                webHelper,
+                customerActivityService,
+                genericAttributeService,
+                addressAttributeFormatter,
+                httpContext,
+                mediaSettings,
+                shoppingCartSettings,
+                catalogSettings,
+                orderSettings,
+                shippingSettings,
+                taxSettings,
+                captchaSettings,
+                addressSettings,
+                rewardPointsSettings
+            )
         {
             this._productService = productService;
             this._workContext = workContext;
@@ -178,20 +225,35 @@ namespace Sloppr.Nop.Plugins.ShopByWarehouse.Controllers
         #endregion
 
         [NopHttpsRequirement(SslRequirement.Yes)]
-        public ActionResult Cart()
+        public override ActionResult Cart()
         {
             if (!_permissionService.Authorize(StandardPermissionProvider.EnableShoppingCart))
                 return RedirectToRoute("HomePage");
 
+            string wh = Request["wh"];
+
+            if (string.IsNullOrWhiteSpace(wh))
+                return RedirectToRoute("HomePage");
+
+            var warehouse = _shippingService.GetAllWarehouses()
+                .SingleOrDefault(m => m.Name.Equals(wh, StringComparison.InvariantCultureIgnoreCase));
+
+            if (warehouse == null)
+                return RedirectToRoute("HomePage");
+
+            var warehouseProducts = _productService.SearchProducts()
+                .Where(m => m.WarehouseId == warehouse.Id)
+                .ToList();
+
             var cart = _workContext.CurrentCustomer.ShoppingCartItems
                 .Where(sci => sci.ShoppingCartType == ShoppingCartType.ShoppingCart)
                 .LimitPerStore(_storeContext.CurrentStore.Id)
+                .Join(warehouseProducts, sci => sci.ProductId, whp => whp.Id, (sci, whp) => sci)
                 .ToList();
 
-            throw new NotImplementedException("");
-            //var model = new ShoppingCartModel();
-            //PrepareShoppingCartModel(model, cart);
-            //return View(model);
+            var model = new ShoppingCartModel();
+            PrepareShoppingCartModel(model, cart);
+            return View(model);
         }
     }
 }

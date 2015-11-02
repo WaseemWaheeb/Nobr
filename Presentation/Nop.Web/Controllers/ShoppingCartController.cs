@@ -1967,7 +1967,7 @@ namespace Nop.Web.Controllers
 
 
         [NopHttpsRequirement(SslRequirement.Yes)]
-        public ActionResult Cart()
+        public virtual ActionResult Cart()
         {
             if (!_permissionService.Authorize(StandardPermissionProvider.EnableShoppingCart))
                 return RedirectToRoute("HomePage");

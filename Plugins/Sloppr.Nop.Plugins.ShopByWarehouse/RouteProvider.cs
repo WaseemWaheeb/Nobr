@@ -1,6 +1,7 @@
 ﻿using Nop.Web.Framework.Mvc.Routes;
 using System.Web.Routing;
 using System.Web.Mvc;
+using Nop.Web.Framework.Localization;
 
 namespace Sloppr.Nop.Plugins.ShopByWarehouse
 {
@@ -8,21 +9,17 @@ namespace Sloppr.Nop.Plugins.ShopByWarehouse
     {
         public void RegisterRoutes(RouteCollection routes)
         {
-            routes.MapRoute("Sloppr.Nop.Plugins.ShopByWarehouse.Cart",
-                 "cart",
-                 new { controller = "ShoppingCart", action = "Cart" },
-                 new[] { "Sloppr.Nop.Plugins.ShopByWarehouse.Controllers" }
+            var defaultShoppingCartRoute = routes["ShoppingCart"];
+            routes.Remove(defaultShoppingCartRoute);
+
+            routes.MapLocalizedRoute(
+                name: "ShoppingCart",
+                url: "Cart",
+                defaults: new { controller = "WarehouseShoppingCart", action = "Cart" },
+                namespaces: new[] { "Sloppr.Nop.Plugins.ShopByWarehouse.Controllers" }
             );
 
-            //RouteBase r =
-            //     routes.MapRoute("Plugin.Misc.AzureBlob.Media",
-            //    "Admin/Setting/Media",
-            //     new { controller = "MiscAzureBlob", action = "Media", area = "admin" },
-            //     new[] { "Nop.Plugin.Misc.AzureBlob.Controllers" });
-            //routes.Remove(r);
-            //routes.Insert(0, r);
-
-            //ViewEngines.Engines.Insert(0, new CustomViewEngine());
+            var a = routes["ShoppingCart"];
         }
 
         public int Priority
