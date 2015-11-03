@@ -13,10 +13,10 @@
 }
 <div class="page shopping-cart-page">
     <div class="page-title">
-        <h1>@T("ShoppingCart")</h1>
+        <h3 style="display:inline-block;margin-right: 20px">@T("ShoppingCart")</h3>
         @if (Model.Warehouses.Any())
         {
-            <div class="buttons">
+            <div class="buttons" style="display:inline-block">
                 @foreach (var warehouse in Model.Warehouses)
                 {
                     if (warehouse.Id == Model.CurrentWarehouse.Id)
