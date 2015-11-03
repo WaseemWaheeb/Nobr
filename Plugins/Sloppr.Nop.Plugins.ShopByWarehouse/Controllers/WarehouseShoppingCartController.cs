@@ -2133,9 +2133,22 @@ namespace Sloppr.Nop.Plugins.ShopByWarehouse.Controllers
             if (!_permissionService.Authorize(StandardPermissionProvider.EnableShoppingCart))
                 return RedirectToRoute("HomePage");
 
+            int warehouseId = 0;
+            bool parseWarehouseSuccess = Int32.TryParse(form["wh"], out warehouseId);
+
+            if (!parseWarehouseSuccess || warehouseId == 0)
+                return RedirectToAction("Cart");
+
+            var warehouses = _shippingService.GetAllWarehouses();
+            var warehouse = warehouses.SingleOrDefault(m => m.Id == warehouseId);
+
+            if (warehouse == null)
+                return RedirectToAction("Cart");
+
             var cart = _workContext.CurrentCustomer.ShoppingCartItems
                 .Where(sci => sci.ShoppingCartType == ShoppingCartType.ShoppingCart)
                 .LimitPerStore(_storeContext.CurrentStore.Id)
+                .LimitPerWarehouse(warehouse.Id)
                 .ToList();
 
             var allIdsToRemove = form["removefromcart"] != null ? form["removefromcart"].Split(new[] { ',' }, StringSplitOptions.RemoveEmptyEntries).Select(x => int.Parse(x)).ToList() : new List<int>();
@@ -2170,8 +2183,12 @@ namespace Sloppr.Nop.Plugins.ShopByWarehouse.Controllers
             cart = _workContext.CurrentCustomer.ShoppingCartItems
                 .Where(sci => sci.ShoppingCartType == ShoppingCartType.ShoppingCart)
                 .LimitPerStore(_storeContext.CurrentStore.Id)
+                .LimitPerWarehouse(warehouse.Id)
                 .ToList();
+
             var model = new ShoppingCartModel();
+            model.CurrentWarehouse = warehouse;
+            model.Warehouses = warehouses;
             PrepareShoppingCartModel(model, cart);
             //update current warnings
             foreach (var kvp in innerWarnings)
@@ -2238,6 +2255,8 @@ namespace Sloppr.Nop.Plugins.ShopByWarehouse.Controllers
             {
                 //something wrong, redisplay the page with warnings
                 var model = new ShoppingCartModel();
+                model.CurrentWarehouse = warehouse;
+                model.Warehouses = warehouses;
                 PrepareShoppingCartModel(model, cart, validateCheckoutAttributes: true);
                 return View(model);
             }
@@ -2351,9 +2370,22 @@ namespace Sloppr.Nop.Plugins.ShopByWarehouse.Controllers
         [FormValueRequired("estimateshipping")]
         public override ActionResult GetEstimateShipping(EstimateShippingModel shippingModel, FormCollection form)
         {
+            int warehouseId = 0;
+            bool parseWarehouseSuccess = Int32.TryParse(form["wh"], out warehouseId);
+
+            if (!parseWarehouseSuccess || warehouseId == 0)
+                return RedirectToAction("Cart");
+
+            var warehouses = _shippingService.GetAllWarehouses();
+            var warehouse = warehouses.SingleOrDefault(m => m.Id == warehouseId);
+
+            if (warehouse == null)
+                return RedirectToAction("Cart");
+
             var cart = _workContext.CurrentCustomer.ShoppingCartItems
                 .Where(sci => sci.ShoppingCartType == ShoppingCartType.ShoppingCart)
                 .LimitPerStore(_storeContext.CurrentStore.Id)
+                .LimitPerWarehouse(warehouse.Id)
                 .ToList();
 
             //parse and save checkout attributes
