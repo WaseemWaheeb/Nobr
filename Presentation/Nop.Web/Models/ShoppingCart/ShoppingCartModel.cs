@@ -2,6 +2,7 @@
 using System.Web.Mvc;
 using System.Web.Routing;
 using Nop.Core.Domain.Catalog;
+using Nop.Core.Domain.Shipping;
 using Nop.Web.Framework.Mvc;
 using Nop.Web.Models.Common;
 using Nop.Web.Models.Media;
@@ -12,6 +13,7 @@ namespace Nop.Web.Models.ShoppingCart
     {
         public ShoppingCartModel()
         {
+            Warehouses = new List<Warehouse>();
             Items = new List<ShoppingCartItemModel>();
             Warnings = new List<string>();
             EstimateShipping = new EstimateShippingModel();
@@ -24,6 +26,9 @@ namespace Nop.Web.Models.ShoppingCart
             ButtonPaymentMethodControllerNames = new List<string>();
             ButtonPaymentMethodRouteValues = new List<RouteValueDictionary>();
         }
+
+        public Warehouse CurrentWarehouse { get; set; }
+        public IList<Warehouse> Warehouses { get; set; }
 
         public bool OnePageCheckoutEnabled { get; set; }
 

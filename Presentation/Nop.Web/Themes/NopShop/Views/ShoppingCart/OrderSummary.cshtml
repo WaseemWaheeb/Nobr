@@ -243,7 +243,7 @@
                     }
                     <div class="col-md-4 pull-right">
                         <div class="custom-footer-cart-div">
-                            @Html.Action("OrderTotals", "ShoppingCart", new { isEditable = Model.IsEditable })
+                            @Html.Action("OrderTotals", "ShoppingCart", new { isEditable = Model.IsEditable, warehouseId = Model.CurrentWarehouse.Id })
                             @if (Model.IsEditable)
                             {
                                 if (Model.TermsOfServiceOnShoppingCartPage)
@@ -281,6 +281,7 @@
                                         <button type="submit" id="checkout" name="checkout" value="checkout" class="btn btn-primary get">
                                             <span>@T("Checkout.Button")</span>
                                         </button>
+                                        @Html.Hidden("wh", Model.CurrentWarehouse.Id)
                                     }
                                 </div>
                                 <div class="addon-buttons">
@@ -300,10 +301,24 @@
         }
     }
     else
-    {   <div class="custom-page-box-div">
-             @T("ShoppingCart.CartIsEmpty")
-        </div>
-       
+    {
+        if (Model.Warnings.Count > 0)
+        {
+            <div class="alert alert-danger square-box ">
+
+                @for (int i = 0; i < Model.Warnings.Count; i++)
+                {
+                    <div>@Model.Warnings[i]</div>
+                }
+
+            </div>
+        }
+        else
+        {
+            <div class="custom-page-box-div">
+                 @T("ShoppingCart.CartIsEmpty")
+            </div>
+        }
     }
     @Html.Widget("order_summary_content_after")
 </div>

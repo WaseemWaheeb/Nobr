@@ -1111,6 +1111,7 @@ namespace Nop.Services.Orders
                         ShoppingCartType = shoppingCartType,
                         StoreId = storeId,
                         Product = product,
+                        WarehouseId = product.WarehouseId,
                         AttributesXml = attributesXml,
                         CustomerEnteredPrice = customerEnteredPrice,
                         Quantity = quantity,

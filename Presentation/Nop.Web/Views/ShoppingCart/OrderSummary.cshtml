@@ -218,7 +218,7 @@
                </div>
            }
            <div class="totals">
-               @Html.Action("OrderTotals", "ShoppingCart", new { isEditable = Model.IsEditable })
+               @Html.Action("OrderTotals", "ShoppingCart", new { isEditable = Model.IsEditable, warehouseId = Model.CurrentWarehouse.Id })
                @if (Model.IsEditable)
                {
                    if (!String.IsNullOrEmpty(Model.MinOrderSubtotalWarning))
@@ -264,6 +264,7 @@
                            <button type="submit" id="checkout" name="checkout" value="checkout" class="button-1 checkout-button">
                                @T("Checkout.Button")
                            </button>
+                           @Html.Hidden("wh", Model.CurrentWarehouse.Id)
                        }
                    </div>
                    <div class="addon-buttons">
@@ -281,9 +282,23 @@
    }
    else
    {
-       <div class="no-data">
-           @T("ShoppingCart.CartIsEmpty")
-       </div>
+       if (Model.Warnings.Count > 0)
+       {
+            <div class="message-error">
+                <ul>
+                    @foreach (var warning in Model.Warnings)
+                    {
+                        <li>@warning</li>
+                    }
+                </ul>
+            </div>
+       }
+       else
+       {
+           <div class="no-data">
+               @T("ShoppingCart.CartIsEmpty")
+           </div>
+       }
    }
    @Html.Widget("order_summary_content_after")
 </div>
