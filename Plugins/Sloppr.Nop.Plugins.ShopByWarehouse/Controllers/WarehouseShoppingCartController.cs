@@ -2278,15 +2278,31 @@ namespace Sloppr.Nop.Plugins.ShopByWarehouse.Controllers
         [FormValueRequired("applydiscountcouponcode")]
         public override ActionResult ApplyDiscountCoupon(string discountcouponcode, FormCollection form)
         {
+            int warehouseId = 0;
+            bool parseWarehouseSuccess = Int32.TryParse(form["wh"], out warehouseId);
+
+            if (!parseWarehouseSuccess || warehouseId == 0)
+                return RedirectToAction("Cart");
+
+            var warehouses = _shippingService.GetAllWarehouses();
+            var warehouse = warehouses.SingleOrDefault(m => m.Id == warehouseId);
+
+            if (warehouse == null)
+                return RedirectToAction("Cart");
+
             var cart = _workContext.CurrentCustomer.ShoppingCartItems
                 .Where(sci => sci.ShoppingCartType == ShoppingCartType.ShoppingCart)
                 .LimitPerStore(_storeContext.CurrentStore.Id)
+                .LimitPerWarehouse(warehouse.Id)
                 .ToList();
 
             //parse and save checkout attributes
             ParseAndSaveCheckoutAttributes(cart, form);
 
             var model = new ShoppingCartModel();
+            model.CurrentWarehouse = warehouse;
+            model.Warehouses = warehouses;
+
             if (!String.IsNullOrWhiteSpace(discountcouponcode))
             {
                 var discount = _discountService.GetDiscountByCouponCode(discountcouponcode);
@@ -2321,15 +2337,31 @@ namespace Sloppr.Nop.Plugins.ShopByWarehouse.Controllers
         [FormValueRequired("applygiftcardcouponcode")]
         public override ActionResult ApplyGiftCard(string giftcardcouponcode, FormCollection form)
         {
+            int warehouseId = 0;
+            bool parseWarehouseSuccess = Int32.TryParse(form["wh"], out warehouseId);
+
+            if (!parseWarehouseSuccess || warehouseId == 0)
+                return RedirectToAction("Cart");
+
+            var warehouses = _shippingService.GetAllWarehouses();
+            var warehouse = warehouses.SingleOrDefault(m => m.Id == warehouseId);
+
+            if (warehouse == null)
+                return RedirectToAction("Cart");
+
             var cart = _workContext.CurrentCustomer.ShoppingCartItems
                 .Where(sci => sci.ShoppingCartType == ShoppingCartType.ShoppingCart)
                 .LimitPerStore(_storeContext.CurrentStore.Id)
+                .LimitPerWarehouse(warehouse.Id)
                 .ToList();
 
             //parse and save checkout attributes
             ParseAndSaveCheckoutAttributes(cart, form);
 
             var model = new ShoppingCartModel();
+            model.CurrentWarehouse = warehouse;
+            model.Warehouses = warehouses;
+
             if (!cart.IsRecurring())
             {
                 if (!String.IsNullOrWhiteSpace(giftcardcouponcode))
@@ -2392,6 +2424,8 @@ namespace Sloppr.Nop.Plugins.ShopByWarehouse.Controllers
             ParseAndSaveCheckoutAttributes(cart, form);
 
             var model = new ShoppingCartModel();
+            model.CurrentWarehouse = warehouse;
+            model.Warehouses = warehouses;
             model.EstimateShipping.CountryId = shippingModel.CountryId;
             model.EstimateShipping.StateProvinceId = shippingModel.StateProvinceId;
             model.EstimateShipping.ZipPostalCode = shippingModel.ZipPostalCode;
@@ -2478,13 +2512,29 @@ namespace Sloppr.Nop.Plugins.ShopByWarehouse.Controllers
         [ValidateInput(false)]
         [HttpPost, ActionName("Cart")]
         [FormValueRequired("removesubtotaldiscount", "removeordertotaldiscount", "removediscountcouponcode")]
-        public override ActionResult RemoveDiscountCoupon()
+        public override ActionResult RemoveDiscountCoupon(FormCollection form)
         {
+            int warehouseId = 0;
+            bool parseWarehouseSuccess = Int32.TryParse(form["wh"], out warehouseId);
+
+            if (!parseWarehouseSuccess || warehouseId == 0)
+                return RedirectToAction("Cart");
+
+            var warehouses = _shippingService.GetAllWarehouses();
+            var warehouse = warehouses.SingleOrDefault(m => m.Id == warehouseId);
+
+            if (warehouse == null)
+                return RedirectToAction("Cart");
+
             var cart = _workContext.CurrentCustomer.ShoppingCartItems
                 .Where(sci => sci.ShoppingCartType == ShoppingCartType.ShoppingCart)
                 .LimitPerStore(_storeContext.CurrentStore.Id)
+                .LimitPerWarehouse(warehouse.Id)
                 .ToList();
+
             var model = new ShoppingCartModel();
+            model.CurrentWarehouse = warehouse;
+            model.Warehouses = warehouses;
 
             _genericAttributeService.SaveAttribute<string>(_workContext.CurrentCustomer,
                 SystemCustomerAttributeNames.DiscountCouponCode, null);
@@ -2498,7 +2548,21 @@ namespace Sloppr.Nop.Plugins.ShopByWarehouse.Controllers
         [FormValueRequired(FormValueRequirement.StartsWith, "removegiftcard-")]
         public override ActionResult RemoveGiftCardCode(FormCollection form)
         {
+            int warehouseId = 0;
+            bool parseWarehouseSuccess = Int32.TryParse(form["wh"], out warehouseId);
+
+            if (!parseWarehouseSuccess || warehouseId == 0)
+                return RedirectToAction("Cart");
+
+            var warehouses = _shippingService.GetAllWarehouses();
+            var warehouse = warehouses.SingleOrDefault(m => m.Id == warehouseId);
+
+            if (warehouse == null)
+                return RedirectToAction("Cart");
+
             var model = new ShoppingCartModel();
+            model.CurrentWarehouse = warehouse;
+            model.Warehouses = warehouses;
 
             //get gift card identifier
             int giftCardId = 0;
@@ -2515,7 +2579,9 @@ namespace Sloppr.Nop.Plugins.ShopByWarehouse.Controllers
             var cart = _workContext.CurrentCustomer.ShoppingCartItems
                 .Where(sci => sci.ShoppingCartType == ShoppingCartType.ShoppingCart)
                 .LimitPerStore(_storeContext.CurrentStore.Id)
+                .LimitPerWarehouse(warehouse.Id)
                 .ToList();
+
             PrepareShoppingCartModel(model, cart);
             return View(model);
         }

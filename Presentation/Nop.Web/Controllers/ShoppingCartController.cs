@@ -2302,7 +2302,7 @@ namespace Nop.Web.Controllers
         [ValidateInput(false)]
         [HttpPost, ActionName("Cart")]
         [FormValueRequired("removesubtotaldiscount", "removeordertotaldiscount", "removediscountcouponcode")]
-        public virtual ActionResult RemoveDiscountCoupon()
+        public virtual ActionResult RemoveDiscountCoupon(FormCollection form)
         {
             var cart = _workContext.CurrentCustomer.ShoppingCartItems
                 .Where(sci => sci.ShoppingCartType == ShoppingCartType.ShoppingCart)
