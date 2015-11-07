@@ -1,0 +1,8 @@
+﻿Group: Widgets
+FriendlyName: Social Links
+SystemName: Widgets.SocialLinks
+Version: 1.09
+SupportedVersions: 3.60
+Author: Sloppr team
+DisplayOrder: 1
+FileName: Nop.Plugin.Widgets.SocialLinks.dll
