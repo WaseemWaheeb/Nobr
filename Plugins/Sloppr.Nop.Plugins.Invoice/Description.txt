@@ -1,8 +1,8 @@
 ﻿Group: Widgets
-FriendlyName: Social Links
-SystemName: Widgets.SocialLinks
-Version: 1.09
+FriendlyName: Invoice
+SystemName: Sloppr.Nop.Plugins.Invoice
+Version: 1.00
 SupportedVersions: 3.60
 Author: Sloppr team
 DisplayOrder: 1
-FileName: Nop.Plugin.Widgets.SocialLinks.dll
+FileName: Sloppr.Nop.Plugins.Invoice.dll
