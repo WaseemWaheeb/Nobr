@@ -16,7 +16,7 @@ namespace Nop.Plugin.Sloppr.Invoice
     {
         public virtual void Register(ContainerBuilder builder, ITypeFinder typeFinder)
         {
-            builder.RegisterType<Nop.Plugin.Sloppr.Invoice.Services.PdfService>().As<Nop.Services.Common.PdfService>().InstancePerRequest();
+            builder.RegisterType<Nop.Plugin.Sloppr.Invoice.Services.PdfService>().As<IPdfService>().InstancePerRequest();
         }
 
         public int Order

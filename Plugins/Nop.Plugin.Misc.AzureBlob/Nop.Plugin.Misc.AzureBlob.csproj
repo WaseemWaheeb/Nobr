@@ -175,7 +175,6 @@
     <Compile Include="Services\BlobService.cs" />
     <Compile Include="Services\IPictureFileService.cs" />
     <Compile Include="Services\PictureFileService.cs" />
-    <Compile Include="Services\PictureService.cs" />
     <Compile Include="Services\StoreDownloadService.cs" />
     <Compile Include="Services\StorePictureService.cs" />
   </ItemGroup>

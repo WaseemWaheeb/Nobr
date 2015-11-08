@@ -113,6 +113,22 @@ namespace Nop.Plugin.Misc.AzureBlob.Services
             return null;
         }
 
+        /// <summary>
+        /// Get a picture local path
+        /// </summary>
+        /// <param name="picture">Picture instance</param>
+        /// <param name="targetSize">The target picture size (longest side)</param>
+        /// <param name="showDefaultPicture">A value indicating whether the default picture is shown</param>
+        /// <returns></returns>
+        public override string GetThumbLocalPath(Picture picture, int targetSize = 0, bool showDefaultPicture = true)
+        {
+            string url = GetPictureUrl(picture, targetSize, showDefaultPicture);
+            if (String.IsNullOrEmpty(url))
+                return String.Empty;
+
+            return url;
+        }
+
         #endregion
 
         #region Base methods
