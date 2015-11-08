@@ -1,8 +1,0 @@
-﻿Group: Sloppr
-FriendlyName: Invoice
-SystemName: Nop.Plugins.Sloppr.Invoice
-Version: 1.00
-SupportedVersions: 3.60
-Author: Sloppr team
-DisplayOrder: 1
-FileName: Nop.Plugins.Sloppr.Invoice.dll

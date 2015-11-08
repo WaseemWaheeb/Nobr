@@ -1,8 +1,0 @@
-﻿Group: Sloppr
-FriendlyName: Shop By Warehouse
-SystemName: Sloppr.Nop.Plugins.ShopByWarehouse
-Version: 1.00
-SupportedVersions: 3.60
-Author: Sloppr Team
-DisplayOrder: 1
-FileName: Sloppr.Nop.Plugins.ShopByWarehouse.dll
