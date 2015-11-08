@@ -144,6 +144,16 @@ namespace Nop.Plugin.Sloppr.Invoice.Services
 
         #endregion
 
+        private string GetPluginImageDirPath()
+        {
+            return System.Web.HttpContext.Current.Server.MapPath("~/Plugins/Sloppr.Invoice/Images");
+        }
+
+        private Image GetStoreImage()
+        {
+            return Image.GetInstance(GetPluginImageDirPath() + "/sloppr_logo_pdf.png");
+        }
+
         #region Methods
 
         /// <summary>
@@ -206,6 +216,9 @@ namespace Nop.Plugin.Sloppr.Invoice.Services
                 headerTable.RunDirection = GetDirection(lang);
                 headerTable.DefaultCell.Border = Rectangle.NO_BORDER;
 
+                //store image
+                doc.Add(GetStoreImage());
+                
                 //store info
                 var store = _storeService.GetStoreById(order.StoreId) ?? _storeContext.CurrentStore;
                 var anchor = new Anchor(store.Url.Trim(new[] { '/' }), font);
