@@ -34,13 +34,13 @@ using Nop.Services.Tax;
 using Nop.Web.Framework.Controllers;
 using Nop.Web.Framework.Security;
 using Nop.Web.Framework.Security.Captcha;
-using Sloppr.Nop.Plugins.Invoice.Models;
+using Nop.Plugins.Sloppr.Invoice.Models;
 
-namespace Sloppr.Nop.Plugins.Invoice.Controllers
+namespace Nop.Plugins.Sloppr.Invoice.Controllers
 {
     public class InvoiceController : BasePluginController
     {
-        private readonly string _viewFolderPath = "~/Plugins/Sloppr.Nop.Plugins.Invoice/Views/Invoice";
+        private readonly string _viewFolderPath = "~/Plugins/Nop.Plugins.Sloppr.Invoice/Views/Invoice";
         
         private readonly ISettingService _settingService;
         private readonly StoreInformationSettings _storeInformationSettings;

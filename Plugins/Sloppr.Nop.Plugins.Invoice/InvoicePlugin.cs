@@ -9,7 +9,7 @@ using Nop.Services.Configuration;
 using Nop.Services.Localization;
 using Nop.Services.Media;
 
-namespace Sloppr.Nop.Plugins.Invoice
+namespace Nop.Plugins.Sloppr.Invoice
 {
     /// <summary>
     /// PLugin
@@ -30,7 +30,7 @@ namespace Sloppr.Nop.Plugins.Invoice
         {
             actionName = "Configure";
             controllerName = "Invoice";
-            routeValues = new RouteValueDictionary() { { "Namespaces", "Sloppr.Nop.Plugins.Invoice.Controllers" }, { "area", null } };
+            routeValues = new RouteValueDictionary() { { "Namespaces", "Nop.Plugins.Sloppr.Invoice.Controllers" }, { "area", null } };
         }
 
 

@@ -102,7 +102,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "APIs", "APIs", "{30425D62-3
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sloppr.Api.Cart", "APIs\Sloppr.Api.Cart\Sloppr.Api.Cart.csproj", "{6B8BEC71-B345-4D4E-B427-34F86485FEC2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sloppr.Nop.Plugins.Invoice", "Plugins\Sloppr.Nop.Plugins.Invoice\Sloppr.Nop.Plugins.Invoice.csproj", "{6ABE14AA-5559-456D-BC7F-4292F178A251}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nop.Plugins.Sloppr.Invoice", "Plugins\Sloppr.Nop.Plugins.Invoice\Nop.Plugins.Sloppr.Invoice.csproj", "{6ABE14AA-5559-456D-BC7F-4292F178A251}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

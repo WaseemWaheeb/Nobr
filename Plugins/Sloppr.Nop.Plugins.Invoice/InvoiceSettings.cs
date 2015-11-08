@@ -1,7 +1,7 @@
 ﻿
 using Nop.Core.Configuration;
 
-namespace Sloppr.Nop.Plugins.Invoice
+namespace Nop.Plugins.Sloppr.Invoice
 {
     public class InvoiceSettings : ISettings
     {
