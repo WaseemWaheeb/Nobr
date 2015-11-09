@@ -28,6 +28,9 @@
         </a>
     </div>
     <div class="details">
+        <div class="product-brand">
+            @Html.Raw(Model.ManufacturerName)
+        </div>
         <h2 class="product-title">
             <a href="@Url.RouteUrl("Product", new { SeName = Model.SeName })">@Model.Name</a>
         </h2>
